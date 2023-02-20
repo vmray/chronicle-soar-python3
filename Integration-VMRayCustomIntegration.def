@@ -1,0 +1,153 @@
+{
+  "IsAvailableForCommunity": false,
+  "Identifier": "VMRayCustomIntegration",
+  "ShouldInstalledInSystem": false,
+  "Version": 19.0,
+  "DisplayName": "VMRayCustomIntegration",
+  "Description": "VMRay Analyzer detonates files and URLs to provide you with the verdict and threat intel on known and unknown threats. Use VMRay Analyzer as a part of the following playbooks: \n- User-Reported Phishing\n- Alerts Triage and Enrichment",
+  "ImageBase64": "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",
+  "SvgImage": "<svg width=\"199\" height=\"157\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" overflow=\"hidden\"><defs><clipPath id=\"clip0\"><rect x=\"365\" y=\"280\" width=\"199\" height=\"157\"/></clipPath><clipPath id=\"clip1\"><rect x=\"366\" y=\"280\" width=\"197\" height=\"157\"/></clipPath><clipPath id=\"clip2\"><rect x=\"366\" y=\"280\" width=\"197\" height=\"157\"/></clipPath></defs><g clip-path=\"url(#clip0)\" transform=\"translate(-365 -280)\"><g clip-path=\"url(#clip1)\"><g clip-path=\"url(#clip2)\"><path d=\"M390.324 100.403 395.419 100.203C409.105 99.8037 410.005 90.7125 410.404 88.115 411.803 78.3245 405.309 73.9287 397.317 73.8288L383.73 73.7289 374.339 65.7366 396.917 65.8365C414.6 65.6367 421.593 76.4263 420.095 86.6165 419.595 95.2082 414.001 102.601 405.809 105.298L431.883 135.969 419.895 135.969 390.324 100.403ZM292.918 65.1372 267.342 135.369 254.854 135.369 229.279 65.1372 239.269 65.1372 261.348 126.978 283.427 65.1372 292.918 65.1372ZM365.647 135.369 356.256 135.369 356.256 74.8278 336.775 115.988 331.181 115.988 311.699 74.8278 311.699 135.369 303.008 135.369 303.008 65.1372 315.795 65.1372 334.577 104.299 352.66 65.1372 365.647 65.1372 365.647 135.369ZM503.215 135.869 493.224 135.869 486.331 116.288 455.96 116.288 449.067 135.869 439.576 135.869 465.151 65.6367 477.539 65.6367 503.215 135.869ZM483.434 108.296 471.046 73.8288 458.658 108.296 483.434 108.296ZM556.663 65.6367 531.887 105.099 531.887 135.869 522.496 135.869 522.496 106.098 497.72 65.6367 508.01 65.6367 527.192 97.1063 546.573 65.6367 556.663 65.6367Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.88\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M209.898 157.049 162.543 157.049 144.561 122.482 168.138 77.725Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.5\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M103.001 42.8587 84.6184 77.725 66.2361 42.8587Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.5\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M162.543 157.049 126.378 157.049 144.561 122.482Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.75\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M126.378 87.6155 108.196 122.482 84.6184 77.725 103.001 42.8587Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.75\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M108.196 122.482 90.1131 157.049 42.8587 157.049 84.6184 77.725Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.5\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M149.756 42.8587 126.378 87.6155 103.001 42.8587Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.5\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M168.138 77.725 144.561 122.482 126.378 87.6155 149.756 42.8587Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.75\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M144.561 122.482 126.378 157.049 108.196 122.482 126.378 87.6155Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.88\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M126.378 157.049 90.1131 157.049 108.196 122.482Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.75\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/><path d=\"M186.52 42.8587 168.138 77.725 149.756 42.8587Z\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" fill-opacity=\"0.5\" transform=\"matrix(1 0 0 1.00114 340.189 259.78)\"/></g></g></g></svg>",
+  "IsCustom": true,
+  "PythonVersion": 2,
+  "IntegrationProperties": [
+    {
+      "IntegrationIdentifier": "VMRayCustomIntegration",
+      "PropertyName": "API_KEY",
+      "PropertyDescription": null,
+      "PropertyDisplayName": "API_KEY",
+      "PropertyType": 3,
+      "IsMandatory": true,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1667225805680,
+      "ModificationTimeUnixTimeInMs": 1667225805680
+    },
+    {
+      "IntegrationIdentifier": "VMRayCustomIntegration",
+      "PropertyName": "URL",
+      "PropertyDescription": null,
+      "PropertyDisplayName": "URL",
+      "PropertyType": 2,
+      "IsMandatory": true,
+      "Value": "https://eu.cloud.vmray.com",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1667225805680,
+      "ModificationTimeUnixTimeInMs": 1667225805680
+    },
+    {
+      "IntegrationIdentifier": "VMRayCustomIntegration",
+      "PropertyName": "SSL_VERIFY",
+      "PropertyDescription": null,
+      "PropertyDisplayName": "SSL_VERIFY",
+      "PropertyType": 0,
+      "IsMandatory": false,
+      "Value": "false",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1667225805680,
+      "ModificationTimeUnixTimeInMs": 1667225805680
+    }
+  ],
+  "IntegrationSupportedActions": [
+    {
+      "Name": "Get Submission Result",
+      "Description": "Retrieve submission status for a given submission id",
+      "Id": 94,
+      "CreationTimeUnixTimeInMs": 1666596779266,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Submit Hash",
+      "Description": "Submit hash of the suspicious file to retrieve sample information",
+      "Id": 95,
+      "CreationTimeUnixTimeInMs": 1665849046696,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Submit Sample",
+      "Description": "Submit suspicious file to VMRay Analyzer and retrieve submission information",
+      "Id": 97,
+      "CreationTimeUnixTimeInMs": 1665850781146,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Unlock Reports for the Sample",
+      "Description": "Unlock report for the sample which was already analyzed with he Verdict API",
+      "Id": 99,
+      "CreationTimeUnixTimeInMs": 1666596759605,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Sample Report",
+      "Description": "Retrieve PDF analysis report of a given sample id",
+      "Id": 92,
+      "CreationTimeUnixTimeInMs": 1666596807938,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Sample VTIs",
+      "Description": "Retrieve VMRay Threat Identifiers for a given sample id",
+      "Id": 93,
+      "CreationTimeUnixTimeInMs": 1666596790933,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Analysis Archive",
+      "Description": "Retrieve analysis archive file for a given sample or analysis id",
+      "Id": 89,
+      "CreationTimeUnixTimeInMs": 1666596861096,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Ping",
+      "Description": "Check availability and authentication status for the VMRay API",
+      "Id": 87,
+      "CreationTimeUnixTimeInMs": 1665848233435,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Submit URL",
+      "Description": "Submit suspicious URL to VMRay Analyzer and retrieve submission information",
+      "Id": 98,
+      "CreationTimeUnixTimeInMs": 1665850967484,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Sample Mitre Attack Techniques",
+      "Description": "Retrieve MITRE ATT&CK Techniques for a given sample id",
+      "Id": 91,
+      "CreationTimeUnixTimeInMs": 1666596816711,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Child Samples",
+      "Description": "Retrieve child samples for a given sample identifier (useful for archive submissions)",
+      "Id": 165,
+      "CreationTimeUnixTimeInMs": 1666596843765,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    },
+    {
+      "Name": "Get Sample IOCs",
+      "Description": "Retrieve Indicator of Compromise values for a given sample id",
+      "Id": 90,
+      "CreationTimeUnixTimeInMs": 1666596823387,
+      "ModificationTimeUnixTimeInMs": 1669129812452
+    }
+  ],
+  "Categories": [
+    "user-reported phishing",
+    "malware alert triage and enrichment",
+    "incident investigation"
+  ],
+  "HasConnectors": false,
+  "DocumentationLink": null,
+  "IsCertified": false,
+  "UploaderFullName": "Uriel Cohen",
+  "PublishComment": null,
+  "UploaderEmail": "ucohen@vmray.com",
+  "UploaderImageBase64": "",
+  "UploaderProfileLink": null,
+  "MinimumSystemVersion": 0.0,
+  "Id": 0,
+  "CreationTimeUnixTimeInMs": 1667225805680,
+  "ModificationTimeUnixTimeInMs": 1667225805680
+}
