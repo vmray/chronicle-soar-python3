@@ -6,6 +6,13 @@
 
 This project aims to integrate Chronicle SOAR and VMRay Analyzer to use VMRay's detailed threat analysis features in playbooks.
 
+## Related Products
+
+The connector supports following VMRay products:
+
+- Final Verdict
+- Total Insight
+
 ## Actions
 
 The following actions can be used in playbooks with this integration.
