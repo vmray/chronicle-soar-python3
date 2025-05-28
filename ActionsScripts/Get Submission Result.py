@@ -68,7 +68,7 @@ def main():
             status = EXECUTION_STATE_COMPLETED  
 
             # human readable message, showed in UI as the action result
-            output_message = "Submission info retrieved successfully for %s" % submission_id
+            output_message = f"Submission info retrieved successfully for {submission_id}"
 
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = True
@@ -82,7 +82,7 @@ def main():
             status = EXECUTION_STATE_FAILED
 
             # human readable message, showed in UI as the action result
-            output_message = "Submission %s couldn't retrieved from VMRay." % submission_id
+            output_message = f"Submission {submission_id} couldn't be retrieved from VMRay." 
 
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = False
@@ -93,7 +93,7 @@ def main():
         status = EXECUTION_STATE_FAILED
 
         # human readable message, showed in UI as the action result
-        output_message = "Submission %s couldn't retrieved from VMRay. Error: %s" % (submission_id, err)
+        output_message = f"Submission {submission_id} couldn't be retrieved from VMRay. Error: {err}" 
         
         # Set a simple result value, used for playbook if\else and placeholders.
         result_value = False
