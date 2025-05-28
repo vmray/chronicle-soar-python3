@@ -38,7 +38,7 @@ class VMRay:
             self.log.info("VMRAY Healthcheck is successfull.")
             return True
         except Exception as err:
-            self.log.error("Healthcheck failed. Error: %s" % (err))
+            self.log.error(f"Healthcheck failed. Error: {err}")
             raise
 
     def authenticate(self):
@@ -53,7 +53,7 @@ class VMRay:
             self.api = VMRayRESTAPI(self.config.URL, self.config.API_KEY, self.config.SSL_VERIFY, self.config.USER_AGENT)
             self.log.info("Successfully authenticated the VMRay API")
         except Exception as err:
-            self.log.error("Authentication failed. Error: %s" % (err))
+            self.log.error(f"Authentication failed. Error: {err}")
             raise
 
     def get_sample(self, identifier, sample_id=False):
@@ -70,18 +70,18 @@ class VMRay:
             url = "/rest/sample/" + str(identifier)
         else:
             hash_type = get_type_of_hash(identifier)
-            url = "/rest/sample/%s/%s" % (hash_type, str(identifier))
+            url = f"/rest/sample/{hash_type}/{identifier}" 
 
         try:
             response = self.api.call(method, url)
             if len(response) == 0:
-                self.log.warn("Sample %s couldn't find in VMRay database." % (identifier))
+                self.log.warn(f"Sample {identifier} couldn't find in VMRay database.")
                 return None
             else:
-                self.log.info("Sample %s retrieved from VMRay" % identifier)
+                self.log.info(f"Sample {identifier} retrieved from VMRay")
                 return response
         except Exception as err:
-            self.log.error("Sample %s couldn't find in VMRay database. Error: %s" % (identifier, err))
+            self.log.error(f"Sample {identifier} couldn't find in VMRay database. Error: {err}")
             return None
 
     def parse_sample_data(self, sample):
@@ -130,7 +130,7 @@ class VMRay:
             try:
                 response = self.api.call(method, url % (sample_id, key))
                 iocs[key] = response
-                self.log.info("%s IOC reports for %s retrieved from VMRay" % (key,sample_id))
+                self.log.info(f"{key} IOC reports for {sample_id} retrieved from VMRay")
             except Exception as err:
                 self.log.error(err)
         
@@ -168,7 +168,7 @@ class VMRay:
         :param iocs: dict object which contains specific raw IOC data about the sample
         :return parsed_iocs: dict object which contains parsed/extracted IOC values
         """
-        self.log.info("parse_sample_iocs function is invoked with parameter %s" % ioc_type)
+        self.log.info(f"parse_sample_iocs function is invoked with parameter {ioc_type}")
         
         parsed_iocs = []
     
@@ -194,10 +194,10 @@ class VMRay:
 
         try:
             response = self.api.call(method, url)
-            self.log.info("Sample %s VTI's successfully retrieved from VMRay" % sample_id)
+            self.log.info(f"Sample {sample_id} VTI's successfully retrieved from VMRay")
             return response
         except Exception as err:
-            self.log.error("Sample %s VTI's couldn't retrieved from VMRay database. Error: %s" % (sample_id, err))
+            self.log.error(f"Sample {sample_id} VTI's couldn't retrieved from VMRay database. Error: {err}")
             return None
     
     def parse_sample_vtis(self, vtis):
@@ -236,11 +236,10 @@ class VMRay:
     
         try:
             response = self.api.call(method, url)
-            self.log.info("Sample %s Mitre Att&ck techniques successfully retrieved from VMRay" % sample_id)
+            self.log.info(f"Sample {sample_id} Mitre Att&ck techniques successfully retrieved from VMRay")
             return response
         except Exception as err:
-            self.log.error("Sample %s Mitre Att&ck techniques couldn't retrieved from VMRay database. Error: %s" % (
-                sample_id, err))
+            self.log.error("Sample {sample_id} Mitre Att&ck techniques couldn't retrieved from VMRay database. Error: {err}")
         
         return None
     
@@ -291,10 +290,10 @@ class VMRay:
 
         try:
             response = self.api.call(method, url, raw_data=True)
-            self.log.info("Sample %s report successfully retrieved from VMRay" % sample_id)
+            self.log.info(f"Sample {sample_id} report successfully retrieved from VMRay")
             return response.data
         except Exception as err:
-            self.log.error("Sample %s report couldn't retrieved from VMRay database. Error: %s" % (sample_id, err))
+            self.log.error(f"Sample {sample_id} report couldn't retrieved from VMRay database. Error: {err}")
         
         return None
     
@@ -311,10 +310,10 @@ class VMRay:
 
         try:
             response = self.api.call(method, url)
-            self.log.info("Sample %s submissions successfully retrieved from VMRay" % sample_id)
+            self.log.info(f"Sample {sample_id} submissions successfully retrieved from VMRay")
             return response
         except Exception as err:
-            self.log.error("Sample %s submissions couldn't retrieved from VMRay database. Error: %s" % (sample_id, err))
+            self.log.error(f"Sample {sample_id} submissions couldn't retrieved from VMRay database. Error: {err}")
 
         return None
     
@@ -330,10 +329,10 @@ class VMRay:
         url = "/rest/analysis/submission/%s" % str(submission_id)
         try:
             response = self.api.call(method, url)
-            self.log.info("Submission %s analyses successfully retrieved from VMRay" % submission_id)
+            self.log.info(f"Submission {submission_id} analyses successfully retrieved from VMRay")
             return response
         except Exception as err:
-            self.log.error("Submission %s analyses couldn't retrieved from VMRay. Error: %s" % (submission_id, err))
+            self.log.error(f"Submission {submission_id} analyses couldn't retrieved from VMRay. Error: {err}")
         
         return None
 
@@ -350,10 +349,10 @@ class VMRay:
 
         try:
             response = self.api.call(method, url, raw_data=True)
-            self.log.info("Analysis %s archive successfully retrieved from VMRay" % analysis_id)
+            self.log.info(f"Analysis {analysis_id} archive successfully retrieved from VMRay")
             return response.data
         except Exception as err:
-            self.log.error("Analysis %s archive couldn't retrieved from VMRay database. Error: %s" % (analysis_id, err))
+            self.log.error(f"Analysis {analysis_id} archive couldn't retrieved from VMRay database. Error: {err}")
 
         return None
     
@@ -380,7 +379,7 @@ class VMRay:
             if len(response["errors"]) == 0:
                 submission_id = response["submissions"][0]["submission_id"]
                 sample_id = response["samples"][0]["sample_id"]
-                self.log.info("Url %s submitted to VMRay" % sample_url)
+                self.log.info(f"Url {sample_url} submitted to VMRay")
                 return {"submission_id": submission_id, "sample_id": sample_id}
             else:
                 [self.log.error(str(error)) for error in response["errors"]]
@@ -419,7 +418,7 @@ class VMRay:
                     if len(response["errors"]) == 0:
                         submission_id = response["submissions"][0]["submission_id"]
                         sample_id = response["samples"][0]["sample_id"]
-                        self.log.info("File %s submitted to VMRay" % sample_file_path)
+                        self.log.info(f"File {sample_file_path} submitted to VMRay")
                         return {"submission_id": submission_id, "sample_id": sample_id}
                     else:
                         [self.log.error(str(error)) for error in response["errors"]]
@@ -479,10 +478,10 @@ class VMRay:
         try:
             response = self.api.call(method, url % submission_id)
             if response["submission_finished"]:
-                self.log.info("Submission %s finished." % submission_id)
+                self.log.info(f"Submission {submission_id} finished.")
                 return True, response
             else:
-                self.log.info("Submission %s is running." % submission_id)
+                self.log.info(f"Submission {submission_id} is running.")
                 return False, None
         except Exception as err:
             self.log.error(err)
@@ -504,7 +503,7 @@ class VMRay:
             response = self.api.call(method, url)
             reports_ids = response["unlocked_analysis_ids"]
             if len(reports_ids) > 0:
-                self.log.info("Sample %s reports(%s) unlocked." % (sample_id, ",".join(reports_ids)))
+                self.log.info(f"Sample {sample_id} reports({','.join(reports_ids)}) unlocked.")
             return True
         except Exception as err:
             self.log.error(err)
