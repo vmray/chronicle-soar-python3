@@ -68,7 +68,7 @@ def main():
             status = EXECUTION_STATE_COMPLETED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Sample retrieved successfully for %s" % hash_value
+            output_message = f"Sample retrieved successfully for {hash_value}" 
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = True
@@ -82,7 +82,7 @@ def main():
             status = EXECUTION_STATE_FAILED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Hash %s not found in VMRay database." % hash_value
+            output_message = f"Hash {hash_value} not found in VMRay database." 
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = False
@@ -93,7 +93,7 @@ def main():
         status = EXECUTION_STATE_FAILED
         
         # human readable message, showed in UI as the action result
-        output_message = "Hash %s not found in VMRay database. Error: %s" % (hash_value, err)
+        output_message = f"Hash {hash_value} not found in VMRay database. Error: {err}" 
         
         # Set a simple result value, used for playbook if\else and placeholders.
         result_value = False
