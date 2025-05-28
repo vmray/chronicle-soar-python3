@@ -250,5 +250,5 @@ def main(is_first_run):
     siemplify.end(output_message, result_value, status)
 
 if __name__ == "__main__":
-    is_first_run = len(sys.argv) < 3 or sys.argv[2] == "True"
+    is_first_run = len(sys.argv) < 3 or sys.argv[2].lower() == "true"
     main(is_first_run)
