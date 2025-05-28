@@ -122,7 +122,7 @@ def main():
             status = EXECUTION_STATE_COMPLETED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Sample IOCs retrieved successfully for %s" % sample_id
+            output_message = f"Sample IOCs retrieved successfully for {sample_id}"
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = True
