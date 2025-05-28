@@ -21,7 +21,7 @@ def prepare_vtis_for_insight(response_dict, sample_id):
             vti_text += "&emsp;<strong>Score</strong>: %s\n" % vti["score"]
             if len(vti["classifications"]) > 0:
                 vti_text += "&emsp;<strong>Classifications</strong>: %s\n" % ",".join(vti["classifications"])
-        message += vti_text + "<hr>"
+            message += vti_text + "<hr>"
         
     return message
 
@@ -97,7 +97,7 @@ def main():
             status = EXECUTION_STATE_COMPLETED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Sample VTIs retrieved successfully for %s" % sample_id
+            output_message = f"Sample VTIs retrieved successfully for {sample_id}"
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = True
@@ -108,7 +108,7 @@ def main():
             if create_insight:
                 siemplify.LOGGER.info("Creating case insight for found VTI's.")
                 
-                title = "VMRay Threat Identifiers for Sample %s" % sample_id
+                title = f"VMRay Threat Identifiers for Sample {sample_id}"
                 
                 try:
                     message = prepare_vtis_for_insight(parsed_vtis, sample_id)
@@ -128,7 +128,7 @@ def main():
             status = EXECUTION_STATE_FAILED  
         
             # human readable message, showed in UI as the action result
-            output_message = "No VTI for %s was found in VMRay database." % sample_id
+            output_message = f"No VTI for {sample_id} was found in VMRay database."
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = False
