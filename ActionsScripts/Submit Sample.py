@@ -116,7 +116,8 @@ def query_operation_status(siemplify, vmray, result_data):
             status = EXECUTION_STATE_COMPLETED
             
             # add result_data dict to action result
-            siemplify.result.add_result_json(json.dumps(result_data))
+            # siemplify.result.add_result_json(json.dumps(result_data))
+            siemplify.result.add_result_json(result_data)
 
             return result_value, status, output_message
     
@@ -260,5 +261,5 @@ def main(is_first_run):
     siemplify.end(output_message, result_value, status)
 
 if __name__ == "__main__":
-    is_first_run = len(sys.argv) < 3 or sys.argv[2] == "True"
+    is_first_run = len(sys.argv) < 3 or sys.argv[2].lower() == "true"
     main(is_first_run)
