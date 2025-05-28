@@ -73,20 +73,20 @@ def main():
         if sample_report is not None:
             
             siemplify.result.add_attachment(title="Sample PDF Report", 
-                                            filename="sample_%s.pdf" % sample_id, 
+                                            filename=f"sample_{sample_id}.pdf", 
                                             file_contents=binary_to_base64(sample_report))
             
             if create_insight:
                 siemplify.LOGGER.info("Creating case insight for PDF report.")
              
                 try:
-                    tmp_file_path = "/tmp/sample_%s.pdf" % sample_id
+                    tmp_file_path = f"/tmp/sample_{sample_id}.pdf"
                 
                     file = open(tmp_file_path, "wb")
                     file.write(sample_report)
                     file.close()
                 
-                    description = "PDF report for sample %s" % sample_id
+                    description = f"PDF report for sample {sample_id}"
                     result = siemplify.add_attachment(tmp_file_path, description=description, is_favorite=True)
                     
                     siemplify.LOGGER.info("Result of add_attachment function %s" % result)
@@ -97,7 +97,7 @@ def main():
             status = EXECUTION_STATE_COMPLETED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Sample report retrieved successfully for %s" % sample_id
+            output_message = f"Sample report retrieved successfully for {sample_id}" 
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = True
@@ -108,7 +108,7 @@ def main():
             status = EXECUTION_STATE_FAILED  
         
             # human readable message, showed in UI as the action result
-            output_message = "Report for %s couldn't generated." % sample_id
+            output_message = f"Report for {sample_id} couldn't generated."
         
             # Set a simple result value, used for playbook if\else and placeholders.
             result_value = False
@@ -119,7 +119,7 @@ def main():
         status = EXECUTION_STATE_FAILED
         
         # human readable message, showed in UI as the action result
-        output_message = "Report for %s couldn't generated. Error: %s" % (sample_id, err)
+        output_message = f"Report for {sample_id} couldn't generated. Error: {err}"
         
         # Set a simple result value, used for playbook if\else and placeholders.
         result_value = False
