@@ -96,7 +96,7 @@ def main():
                 status = EXECUTION_STATE_FAILED
 
                 # human readable message, showed in UI as the action result
-                output_message = "Error occured when retrieving analysis archive for analysis %s" % analysis_id
+                output_message = f"Error occurred when retrieving analysis archive for analysis {analysis_id}" 
 
                 # Set a simple result value, used for playbook if\else and placeholders.
                 result_value = False
@@ -115,7 +115,7 @@ def main():
                     status = EXECUTION_STATE_COMPLETED  
                 
                     # human readable message, showed in UI as the action result
-                    output_message = "Analysis archive retrieved successfully for %s." % analysis_id
+                    output_message = f"Analysis archive retrieved successfully for {analysis_id}."
                 
                     # Set a simple result value, used for playbook if\else and placeholders.
                     result_value = True
@@ -126,7 +126,7 @@ def main():
                     status = EXECUTION_STATE_COMPLETED  
                 
                     # human readable message, showed in UI as the action result
-                    output_message = "Analysis archive retrieved successfully for %s. But file size is bigger than 5MB." % analysis_id
+                    output_message = f"Analysis archive retrieved successfully for {analysis_id}. But file size is bigger than 5MB." 
                 
                     # Set a simple result value, used for playbook if\else and placeholders.
                     result_value = True
@@ -160,7 +160,7 @@ def main():
                             status = EXECUTION_STATE_FAILED
 
                             # human readable message, showed in UI as the action result
-                            output_message = "Error occured when retrieving analysis archive for analysis %s" % analysis_id
+                            output_message = f"Error occurred when retrieving analysis archive for analysis {analysis_id}"
 
                             # Set a simple result value, used for playbook if\else and placeholders.
                             result_value = False
@@ -173,14 +173,14 @@ def main():
 
                             if sys.getsizeof(analysis_archive) / 1000000 < 5:
                                 siemplify.result.add_attachment(title="Analysis Archive", 
-                                                                filename="analysis_archive_%s" % analysis_id, 
+                                                                filename="analysis_archive_%s.zip" % analysis_id, 
                                                                 file_contents=binary_to_base64(analysis_archive))
                         
                                 # used to flag back to siemplify system, the action final status
                                 status = EXECUTION_STATE_COMPLETED  
                             
                                 # human readable message, showed in UI as the action result
-                                output_message = "Analysis archive retrieved successfully for %s." % analysis_id
+                                output_message = f"Analysis archive retrieved successfully for {analysis_id}." 
                             
                                 # Set a simple result value, used for playbook if\else and placeholders.
                                 result_value = True
@@ -192,7 +192,7 @@ def main():
                                 status = EXECUTION_STATE_COMPLETED  
                             
                                 # human readable message, showed in UI as the action result
-                                output_message = "Analysis archive retrieved successfully for %s. But file size is bigger than 5MB." % analysis_id
+                                output_message = f"Analysis archive retrieved successfully for {analysis_id}. But file size is bigger than 5MB."
                             
                                 # Set a simple result value, used for playbook if\else and placeholders.
                                 result_value = True
@@ -203,7 +203,7 @@ def main():
                         status = EXECUTION_STATE_FAILED  
                     
                         # human readable message, showed in UI as the action result
-                        output_message = "No analyses was found for submission %s" % submission_id
+                        output_message = f"No analyses was found for submission {submission_id}" 
                     
                         # Set a simple result value, used for playbook if\else and placeholders.
                         result_value = False
@@ -214,7 +214,7 @@ def main():
                     status = EXECUTION_STATE_FAILED  
                 
                     # human readable message, showed in UI as the action result
-                    output_message = "No suitable submission was found for sample %s" % sample_id
+                    output_message = f"No suitable submission was found for sample {sample_id}" 
                 
                     # Set a simple result value, used for playbook if\else and placeholders.
                     result_value = False
@@ -226,7 +226,7 @@ def main():
                 status = EXECUTION_STATE_FAILED  
             
                 # human readable message, showed in UI as the action result
-                output_message = "No submission was found for sample %s" % sample_id
+                output_message = f"No submission was found for sample {sample_id}" 
             
                 # Set a simple result value, used for playbook if\else and placeholders.
                 result_value = False
@@ -237,7 +237,7 @@ def main():
         status = EXECUTION_STATE_FAILED
         
         # human readable message, showed in UI as the action result
-        output_message = "Error occured when retrieving analysis archive for sample %s. Error: %s" % (sample_id, err)
+        output_message = f"Error occurred when retrieving analysis archive for sample {sample_id}. Error: {err}"
         
         # Set a simple result value, used for playbook if\else and placeholders.
         result_value = False
